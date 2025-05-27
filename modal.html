@@ -1,0 +1,58 @@
+<!-- Modal Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modal – Pure Web Showcase</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="grid.html">Grid</a>
+    <a href="form.html">Form</a>
+    <a href="accordion.html">Accordion</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="quotes.html">Quotes</a>
+    <a href="modal.html" class="active">Modal</a>
+    <a href="about.html">About</a>
+        <a href="js-showcase.html">JS Showcase</a>
+    <a href="404.html">404</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <h1>Modal Interaction</h1>
+      <p>Click below to open a sleek modal window overlay.</p>
+    </header>
+
+    <section class="full-screen-center">
+      <button onclick="openModal()">Open Modal</button>
+    </section>
+
+    <div class="modal-overlay" id="modal" style="display: none">
+      <div class="modal">
+        <h2>Modal Title</h2>
+        <p>This is a stylish modal window. You can close it below.</p>
+        <button onclick="closeModal()">Close</button>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Pure Web Showcase. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    function openModal() {
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- JS Showcase Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Showcase – Pure Web Showcase</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="grid.html">Grid</a>
+    <a href="form.html">Form</a>
+    <a href="accordion.html">Accordion</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="quotes.html">Quotes</a>
+    <a href="modal.html">Modal</a>
+    <a href="about.html">About</a>
+    <a href="js-showcase.html" class="active">JS Showcase</a>
+    <a href="404.html">404</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <h1>JavaScript Showcase</h1>
+      <p>Demonstration of elegant JavaScript logic with DOM manipulation.</p>
+    </header>
+
+    <section class="js-showcase">
+      <div>
+        <input type="text" id="task-input" placeholder="Enter a task...">
+        <button onclick="addTask()">Add</button>
+      </div>
+      <ul id="task-list"></ul>
+
+      <div class="controls">
+        <button onclick="sortTasks()">Sort</button>
+        <button onclick="reverseTasks()">Reverse</button>
+        <button onclick="clearTasks()">Clear</button>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Pure Web Showcase. All rights reserved.
+    </footer>
+  </main>
+</body>
+</html>

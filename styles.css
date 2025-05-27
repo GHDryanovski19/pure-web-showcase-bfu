@@ -1,0 +1,293 @@
+/* styles.css - Artistic Black & White Masterpiece – Sidebar Layout */
+
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --text: #1a1a1a;
+  --border: #d1d1d1;
+  --muted: #888;
+  --radius: 16px;
+  --shadow-soft: 0 12px 50px rgba(0, 0, 0, 0.08);
+  --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --fz-base: clamp(14px, 1vw + 0.8rem, 18px);
+  --transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1);
+  --sidebar-width: 240px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  font-size: var(--fz-base);
+  line-height: 1.8;
+  overflow-x: hidden;
+  letter-spacing: 0.015em;
+  min-height: 100vh;
+}
+
+nav {
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  background: var(--fg);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: var(--shadow-soft);
+  z-index: 10;
+}
+
+nav a {
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+nav a:hover,
+nav a.active {
+  background: #ffffff22;
+  color: var(--bg);
+}
+
+main {
+  margin-left: var(--sidebar-width);
+  padding: 4rem 3rem;
+  flex: 1;
+}
+
+header.hero {
+  background: radial-gradient(circle at 50% 30%, #000000, #121212);
+  color: var(--bg);
+  padding: 4rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.full-screen-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 60vh;
+  text-align: left;
+  background: var(--bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 3rem;
+}
+
+footer {
+  text-align: left;
+  color: var(--muted);
+  margin-top: 5rem;
+  font-size: 0.9rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: calc(33.333% - 1.5rem);
+  min-width: 200px;
+  max-width: 360px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  filter: grayscale(100%) contrast(120%);
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%) contrast(140%);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--bg);
+  color: var(--text);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition);
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.styled-form {
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+input, textarea {
+  padding: 1rem;
+  border: 1px solid var(--fg);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--text);
+  outline: none;
+}
+
+button {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--fg);
+  color: var(--bg);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+button:hover {
+  background: #1a1a1a;
+}
+
+.accordion details {
+  border: 1px solid var(--fg);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  background: var(--bg);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1.5rem;
+}
+
+.accordion summary {
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.accordion summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-weight: bold;
+}
+
+.accordion[open] summary::after {
+  content: "–";
+}
+
+.accordion p {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.js-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.js-showcase input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+.js-showcase button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.js-showcase button:hover {
+  background-color: #333;
+}
+
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#task-list li {
+  background: #fafafa;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #000;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#task-list li:hover {
+  background: #eee;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
